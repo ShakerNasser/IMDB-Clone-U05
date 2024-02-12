@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins", sans-serif;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  background-color: #820000;
+  padding: 10px;
+  align-content: space-between;
+  justify-content: space-around;
+  list-style-type: none;
+}
+.navbar img {
+  width: 50px;
+}
+.navbar li {
+  color: white;
+  font-size: 0.8rem;
+}
+.navbar form input {
+  padding: 5px 0px;
+  width: 10px;
+}
+.navbar form button {
+  padding: 5px 0px;
+}
+.navbar .signin-button {
+  background-color: rgba(75, 0, 15, 0.6);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 7px;
+}/*# sourceMappingURL=style.css.map */
