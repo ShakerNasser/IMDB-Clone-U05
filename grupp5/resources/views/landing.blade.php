@@ -5,23 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{{ asset('nav_footer/style.css') }}">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
-    <title>Document</title>
+    <title>Home</title>
 </head>
 
 <body>
-    <nav>
-        <ul class="navbar">
-            <img src="{{ URL('images/logo.png') }}" alt="logo">
-            <form action="" method="GET">
-                <input type="text" placeholder="Search.." name="query"><button type="submit">Search</button></input>
-
-            </form>
-            <li>Settings</li>
-            <li>Watchlist</li>
-            <button class="signin-button">Sign in</button>
-        </ul>
-    </nav>
+    @include('layout.navbar')
+    <section>
+        <h1>Top movies</h1>
+    </section>
 </body>
+@include('layout.footer')
 
 </html>
