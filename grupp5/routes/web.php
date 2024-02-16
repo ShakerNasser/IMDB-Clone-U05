@@ -25,3 +25,6 @@ Route::get('/login', function () {
 Route::get('/register', function () {
     return view('register');
 });
+
+//genre route//
+Route::get('/genre', function () {return view('genre');});
