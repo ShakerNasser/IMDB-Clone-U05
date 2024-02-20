@@ -1,6 +1,7 @@
 import defaultTheme from 'tailwindcss/defaultTheme';
 import forms from '@tailwindcss/forms';
 
+
 /** @type {import('tailwindcss').Config} */
 export default {
     content: [
@@ -15,6 +16,8 @@ export default {
                 sans: ['Poppins', ...defaultTheme.fontFamily.sans],
             },
             colors: {
+                transparent: 'transparent',
+                current: 'currentColor',
                     'nav-color': '#820000',
                     'search-btn-color': '#C23C3C',
                     'search-field-color': '#591C1C',
@@ -25,7 +28,7 @@ export default {
                     'button-background-color': '#3A3A3A',
                     'form-background-color': '#2E2E2E',
                     'card-background-color': '#222222',
-                    'blackground': '#1A1A1A',
+                    'background': '#1A1A1A',
       },
            
         },
