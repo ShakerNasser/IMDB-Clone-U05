@@ -21,6 +21,7 @@
     </head>
     <!-- Navbar -->
     <body class="antialiased bg-background">
+
         <nav class="relative flex w-full">
         <div class="fixed sm:flex sm:justify-center sm:items-center bg-dots-darker bg-center bg-background  dark:bg-gray-900 selection:bg-red-500 selection:text-text">
             @if (Route::has('login'))

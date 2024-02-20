@@ -1,7 +1,10 @@
 <?php
-
+use App\Models\Title;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TitleController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +36,10 @@ Route::middleware('auth')->group(function () {
 
 
 /*mikael */
+Route::get('/movies', [TitleController::class, 'index']);
+Route::get('/movies/{movie}', [TitleController::class, 'show']);
+Route::apiResource('titles', TitleController::class);
+
 
 
 
