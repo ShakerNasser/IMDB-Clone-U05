@@ -37,6 +37,7 @@ Route::middleware('auth')->group(function () {
 
 
 /*shaker */
+Route::get('/watchlist', function () {return view('/watchlist/watchlist');});
 
 
 
