@@ -44,6 +44,7 @@ Route::apiResource('titles', TitleController::class);
 
 
 /*shaker */
+Route::get('/watchlist', function () {return view('/watchlist/watchlist');});
 
 
 
