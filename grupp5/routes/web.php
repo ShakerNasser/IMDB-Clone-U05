@@ -54,7 +54,7 @@ Route::get('/watchlist', function () {return view('/watchlist/watchlist');});
 
 
 /*heval */
-
+Route::get('/genre', function () {return view('/genre');});
 
 
 
