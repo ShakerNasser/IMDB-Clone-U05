@@ -3,8 +3,7 @@ use App\Models\Title;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TitleController;
-
-
+use App\Http\Controllers\WatchlistController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,7 +43,7 @@ Route::apiResource('titles', TitleController::class);
 
 
 /*shaker */
-Route::get('/watchlist', function () {return view('/watchlist/watchlist');});
+Route::get('/watchlist', [WatchlistController::class, 'show']);
 
 
 
