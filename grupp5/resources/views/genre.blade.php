@@ -11,10 +11,11 @@
     <div class="grid grid-cols-3 gap-4">
         <div class="relative flex max-w-[16rem] min-h-[26rem] flex-col overflow-hidden rounded-xl bg-card-background bg-clip-border text-gray-700 shadow-md">
             <div class="min-h-[60%] relative m-0 overflow-hidden text-gray-700 bg-transparent rounded-none shadow-none bg-clip-border">
+            <img src="{{ asset('images/interstellar.png')}}">
             </div>
             <div class="p-3 flex flex-col justify-center items-center">
                 <h1 class="text-2xl antialiased font-semibold leading-snug tracking-normal text-center text-text">
-                    Movie 1
+                    Interstellar
                 </h1>
                 <div class="">
                     <button class="btn py-2 px-4 rounded text-button-txt bg-button-background mx-auto mt-">Add to Watchlist</button>
@@ -24,11 +25,11 @@
 
         <div class="relative flex max-w-[16rem] min-h-[26rem] flex-col overflow-hidden rounded-xl bg-card-background bg-clip-border text-gray-700 shadow-md">
             <div class="min-h-[60%] relative m-0 overflow-hidden text-gray-700 bg-transparent rounded-none shadow-none bg-clip-border">
-                <img src="https://example.com/movie2.jpg" alt="Movie 2" class="h-full object-cover" />
+                <img src="{{ asset('images/jumanji.png')}}"  />
             </div>
             <div class="p-3 flex flex-col justify-center items-center">
                 <h1 class="text-2xl antialiased font-semibold leading-snug tracking-normal text-center text-text">
-                    Movie 2
+                    Jumanji
                 </h1>
                 <div class="">
                     <button class="btn py-2 px-4 rounded text-button-txt bg-button-background mx-auto mt-">Add to Watchlist</button>
@@ -38,11 +39,11 @@
 
         <div class="relative flex max-w-[16rem] min-h-[26rem] flex-col overflow-hidden rounded-xl bg-card-background bg-clip-border text-gray-700 shadow-md">
             <div class="min-h-[60%] relative m-0 overflow-hidden text-gray-700 bg-transparent rounded-none shadow-none bg-clip-border">
-                <img src="https://example.com/movie3.jpg" alt="Movie 3" class="h-full object-cover" />
+                <img src="{{ asset('images/thedark.png')}}" alt="Movie 3" class="h-full object-cover" />
             </div>
             <div class="p-3 flex flex-col justify-center items-center">
                 <h1 class="text-2xl antialiased font-semibold leading-snug tracking-normal text-center text-text">
-                    Movie 3
+                    The Dark knight
                 </h1>
                 <div class="">
                     <button class="btn py-2 px-4 rounded text-button-txt bg-button-background mx-auto mt-">Add to Watchlist</button>
