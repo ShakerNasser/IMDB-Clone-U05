@@ -10,10 +10,11 @@
                 "dest": "public/build/"
                                 
             },        
-        {
-    "src": "/(.*)",
-    "dest": "/api/index.php"
-    }],
+            {
+                "src": "/(.*)",
+                "dest": "/api/index.php"
+            }
+        ],
     "env": {
     "APP_ENV": "production",
     "APP_DEBUG": "true",
