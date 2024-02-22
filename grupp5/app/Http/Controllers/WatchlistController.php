@@ -36,8 +36,8 @@ class WatchlistController extends Controller
      */
     public function show()
     {
-        $titles = Watchlist::all();
-        return view('watchlist', ['titles' => $titles]);
+        $watchlists = Watchlist::all();
+        return view('watchlist', ['watchlists' => $watchlists]);
     }
     
     
