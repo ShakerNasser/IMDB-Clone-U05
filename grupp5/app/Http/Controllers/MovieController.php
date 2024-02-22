@@ -20,9 +20,7 @@ class MovieController extends Controller
         $movie->trailer_url = $request->trailer_url;
         $movie->image = $request->image;
 
-        $movie->save();
-        return redirect('create-movie')->with('status', 'Movie has been inserted');
-    } 
+    }
     /**
      * Display a listing of the resource.
      */
@@ -44,9 +42,10 @@ class MovieController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+     public function show()
     {
-        //
+      $movies = Movie::get();
+      return view('movies', ['movies' => $movies]);
     }
 
     /**

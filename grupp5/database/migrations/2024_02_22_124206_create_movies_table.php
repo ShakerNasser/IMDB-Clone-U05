@@ -17,7 +17,7 @@ return new class extends Migration
             $table->text('description');
             $table->text('genre');
             $table->date('release_date')->nullable();
-            $table->string('trailer_url');
+            $table->string('trailer_url')->nullable();
             $table->string('image');
             $table->timestamps();
         });

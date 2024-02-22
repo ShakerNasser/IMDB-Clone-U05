@@ -26,6 +26,7 @@ Route::get('/test', function () {
     return view('navbar-footer');
 });
 
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -44,6 +45,11 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/review', [ReviewController::class, 'show']);
 Route::post('/review', [ReviewController::class, 'store']);
+
+Route::get('/movies', [MovieController::class, 'show']);
+
+// Route::get('/create-movie', [MovieController::class, 'index']);
+// Route::post('/store-movie', [MovieController::class, 'store']);
 
 
 /*shaker */

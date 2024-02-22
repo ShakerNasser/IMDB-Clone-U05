@@ -32,8 +32,8 @@
                 </p>
 
                 <p>
-                    <label for="trailers" class="block text-text mt-3">Trailers:</label>
-                    <textarea maxlength="100" name="trailers" id="trailers" rows="1" cols="50" required
+                    <label for="trailer_url" class="block text-text mt-3">Trailers:</label>
+                    <textarea maxlength="100" name="trailer_url" id="trailer_url" rows="1" cols="50" required
                         placeholder="Enter movie trailers URL" class="form-input w-full bg-gray-100 border border-gray-300 rounded p-2"></textarea>
                 </p>
 

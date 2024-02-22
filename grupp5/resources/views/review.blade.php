@@ -14,16 +14,11 @@
         <div class="mx-auto max-w-screen-md mt-4">
             <form action="{{url('review')}}" method="POST" class="border border-gray-300 rounded-lg p-4">
                 @csrf
-
-              
                 <p>
-                    <label for="Review" class="block text-text mt-3">Leave a review:</label>
-                    <input maxlength="50" name="description" id="review" size="30" type="text" required
+                    <label for="review" class="block text-text mt-3">Leave a review:</label>
+                    <input maxlength="50" name="review" id="review" size="30" type="text" required
                         placeholder="Review" class="form-input w-full bg-gray-100 border border-gray-300 rounded p-2" />
                 </p>
-
-                
-
                 <div class="text-center">
                 <button type="submit" name="submit" class=" text-button-txt bg-button-background font-bold py-2 px-4 rounded mt-6 text-center">Add movie</button>
                 </div>
