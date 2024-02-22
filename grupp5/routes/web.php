@@ -1,6 +1,9 @@
 <?php
+
+use App\Http\Controllers\MovieController;
 use App\Models\Title;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ReviewController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TitleController;
 use App\Http\Controllers\WatchlistController;
@@ -38,16 +41,15 @@ Route::middleware('auth')->group(function () {
 
 
 /*mikael */
-Route::get('/movies', [TitleController::class, 'index']);
-Route::get('/movies/{movie}', [TitleController::class, 'show']);
-Route::apiResource('titles', TitleController::class);
 
-
+Route::get('/review', [ReviewController::class, 'show']);
+Route::post('/review', [ReviewController::class, 'store']);
 
 
 /*shaker */
 Route::get('/watchlist', [WatchlistController::class, 'show']);
-Route::get('/create-movie', function () {return view('/create-movie');});
+Route::get('/create-movie', [MovieController::class, 'index']);
+Route::post('/store-movie', [MovieController::class, 'store']);
 
 
 

@@ -1,19 +1,32 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Title;
+
+use App\Models\Movie;
 use Illuminate\Http\Request;
 
-class TitleController extends Controller
+class MovieController extends Controller
 {
+    public function index()
+    {
+        return view('create-movie');
+    }
+    public function store(Request $request)
+    {
+        $movie = new Movie();
+        $movie->title = $request->title;
+        $movie->description = $request->description;
+        $movie->genre = $request->genre;
+        $movie->trailer_url = $request->trailer_url;
+        $movie->image = $request->image;
+
+        $movie->save();
+        return redirect('create-movie')->with('status', 'Movie has been inserted');
+    } 
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
-        $titles = Title::all();
-        return view('movies', ['titles' => $titles]);
-    }
+   
 
     /**
      * Show the form for creating a new resource.
@@ -26,17 +39,14 @@ class TitleController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
-    {
-        //
-    }
+   
 
     /**
      * Display the specified resource.
      */
-    public function show(Title $title)
+    public function show(string $id)
     {
-    return response()->json($title);
+        //
     }
 
     /**
