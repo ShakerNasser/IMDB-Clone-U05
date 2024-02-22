@@ -11,15 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('titles', function (Blueprint $table) {
+        Schema::create('movies', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('title');
             $table->text('description');
+            $table->text('genre');
             $table->date('release_date')->nullable();
-            $table->string('trailer_url')->nullable();
-            $table->text('photos')->nullable(); // JSON array of photo URLs
+            $table->string('trailer_url');
+            $table->string('image');
             $table->timestamps();
         });
+
     }
 
     /**
@@ -27,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('titles');
+        Schema::dropIfExists('movies');
     }
 };
