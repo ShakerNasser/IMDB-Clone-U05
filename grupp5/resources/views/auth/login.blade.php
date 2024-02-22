@@ -2,7 +2,7 @@
 <x-guest-layout>
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
-
+    @include('meta')
     <form method="POST" action="{{ route('login') }}">
         @csrf
         <section class="px-5 py-5">
