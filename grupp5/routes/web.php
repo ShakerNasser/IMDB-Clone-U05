@@ -17,7 +17,10 @@ use App\Http\Controllers\WatchlistController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('homepage');
+});
+Route::get('/test', function () {
+    return view('navbar-footer');
 });
 
 Route::get('/dashboard', function () {
