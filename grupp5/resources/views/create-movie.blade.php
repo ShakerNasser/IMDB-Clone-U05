@@ -9,7 +9,7 @@
         <h1 class="text-5xl font-bold mb-5 text-text"><span class="underline">Movie settings</span></h1>
         
         <div class="mx-auto max-w-screen-md mt-4">
-            <form action="" method="post" class="border border-gray-300 rounded-lg p-4">
+            <form action="{{url('store-movie')}}" method="post" class="border border-gray-300 rounded-lg p-4">
                 @csrf
                 <h4 class="text-text">Add movie by entering the following:</h4>
 
@@ -48,8 +48,13 @@
                 </div>
             </form>
         </div>
+          @if(session('status'))
+    <div class="alert alert-success">
+     <h1 class="text-text">{{ session('status') }}</h1>   
+    </div>
+  @endif
     </section>
-    
+  
 
 </body>
 

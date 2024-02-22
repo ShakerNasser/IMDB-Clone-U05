@@ -3,7 +3,11 @@
 @include('meta')
 
 <body class="bg-background">
-
+@if(session('status'))
+    <div class="alert alert-success">
+     <h1>{{ session('status') }}</h1>   
+    </div>
+  @endif
     <section class="px-10 py-10">
         <h1 class="text-5xl font-bold mb-5 text-text"><span class="underline">Watchlist</span></h1>
     </section>
