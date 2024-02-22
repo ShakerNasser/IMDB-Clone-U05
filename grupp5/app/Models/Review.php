@@ -5,23 +5,23 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Watchlist extends Model
-{
-    use HasFactory;
-
-    protected $table = 'watchlists';
+class Review extends Model
+{ 
+      protected $table = 'review';
     protected $fillable = [
-        'user_id',
-        'titles_id',
+        'id',
+        'review',
     ];
-
-     public function user()
+    
+   public function user()
     {
         return $this->belongsTo(User::class);
     }
-
-     public function movie()
+     
+    public function movie()
     {
         return $this->belongsTo(Movie::class);
     }
+
+    use HasFactory;
 }

@@ -17,4 +17,14 @@ class Movie extends Model
         'image'
     ];
     use HasFactory;
+
+    public function reviews(){
+        return
+        $this->hasMany(Review::class);
+    }
+ public function users()
+    {
+        return $this->belongsToMany(User::class);
+    }
+
 }
