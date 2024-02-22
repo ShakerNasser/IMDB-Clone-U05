@@ -12,6 +12,7 @@
 </section>
 <section class="px-10">
   <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 py-4">
+    @foreach ($movies as $movie)
 <card
   class="relative flex max-w-[16rem] min-h-[26rem] flex-col overflow-hidden rounded-xl bg-card-background bg-clip-border text-gray-700 shadow-md">
   <div class="min-h-[60%] relative m-0 overflow-hidden text-gray-700 bg-transparent rounded-none shadow-none bg-clip-border">
@@ -23,7 +24,7 @@
   </div>
   <div class="p-3">
     <h1 class="text-2xl antialiased font-semibold leading-snug tracking-normal text-center  text-text">
-      Movie title
+     {{$movie->title}}
     </h1>
     <div class="">
         <div class="flex justify-evenly mt-2">
@@ -37,6 +38,8 @@
     </div>
   </div>
             </card> 
+                      @endforeach
+
 </section>
 
 <!-- all movies -->

@@ -28,10 +28,13 @@
                     <input maxlength="50" name="genre" id="genre" size="30" type="text" required placeholder="Genre" class="form-input w-full bg-gray-100 border border-gray-300 rounded p-2" />
                 </div>
 
+
                 <div>
                     <label for="trailer_url" class="block text-text mt-3">Trailer:</label>
-                    <textarea maxlength="100" name="trailer_url" id="trailer_url" rows="1" cols="50" required placeholder="Enter movie trailers URL" class="form-input w-full bg-gray-100 border border-gray-300 rounded p-2"></textarea>
+                    <textarea maxlength="100" name="trailer_url" id="trailer_url" rows="1" cols="50" required 
+                    placeholder="Enter movie trailers URL" class="form-input w-full bg-gray-100 border border-gray-300 rounded p-2"></textarea>
                 </div>
+
 
                 <div>
                     <label for="image" class="block text-text mt-3">Image:</label>
