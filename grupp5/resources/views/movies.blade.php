@@ -13,7 +13,6 @@
             <div class="card p-1 m-2" style="width:350px">
              
               <p class="card-title">{{$movie->title}}</p>
-<img src="{{ asset('images/' . $movie->image) }}" alt="Movie Image" />
 
               <span style="display: inline;">
                 {{ $movie->description }}</span>
