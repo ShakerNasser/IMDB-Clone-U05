@@ -37,10 +37,18 @@ class MovieController extends Controller
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-   
+//Function for search form 
+    public function search(Request $request)
+    {
+        $request->validate([
+            'title' => 'required'
+        ]);
+
+        $title = $request->input('title');
+        $movies = Movie::where('title', 'LIKE', '%' . $title . '%')->get();
+
+        return view('search', compact('movies'));
+    }
 
     /**
      * Display the specified resource.

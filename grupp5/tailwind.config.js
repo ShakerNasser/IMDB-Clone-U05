@@ -30,6 +30,8 @@ export default {
                     'card-background': '#222222',
                     'text':'#F2EDEE',
                     'background': '#100809',
+                    'custom-color': 'rgb(41 37 36)',
+
       },
            
         },
