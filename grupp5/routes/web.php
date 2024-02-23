@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\GenreController;
 use App\Http\Controllers\MovieController;
 use App\Models\Title;
 use App\Http\Controllers\ProfileController;
@@ -7,6 +8,7 @@ use App\Http\Controllers\ReviewController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TitleController;
 use App\Http\Controllers\WatchlistController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
