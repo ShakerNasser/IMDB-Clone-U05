@@ -9,12 +9,14 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up()
+    public function up(): void
     {
-        Schema::create('watchlists', function (Blueprint $table) {
+        Schema::create('reviews', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('user_id');
-            $table->unsignedInteger('movie_id');
+            $table->string('name');
+            $table->integer('movie_id')->unsigned();
+            $table->text('review');
+            $table->boolean('approved')->default(0);
             $table->timestamps();
         });
     }
@@ -24,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('watchlist');
+        Schema::dropIfExists('reviews');
     }
 };
