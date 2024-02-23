@@ -48,8 +48,6 @@ Route::post('/review', [ReviewController::class, 'store']);
 
 Route::get('/movies', [MovieController::class, 'show']);
 
-// Route::get('/create-movie', [MovieController::class, 'index']);
-// Route::post('/store-movie', [MovieController::class, 'store']);
 
 
 /*shaker */

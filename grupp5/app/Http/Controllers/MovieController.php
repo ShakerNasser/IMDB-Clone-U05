@@ -20,6 +20,9 @@ class MovieController extends Controller
         $movie->trailer_url = $request->trailer_url;
         $movie->image = $request->image;
 
+        $movie->save();
+        return redirect('create-movie')->with('status', 'Movie has been inserted');
+
     }
     /**
      * Display a listing of the resource.
