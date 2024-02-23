@@ -7,30 +7,7 @@ use Illuminate\Http\Request;
 
 class WatchlistController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
+   
     /**
      * Display the specified resource.
      */
@@ -39,30 +16,19 @@ class WatchlistController extends Controller
         $watchlists = Watchlist::all();
         return view('watchlist', ['watchlists' => $watchlists]);
     }
-    
-    
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
 
     /**
      * Remove the specified resource from storage.
      */
     public function destroy(string $id)
     {
-        //
-    }
+        // Hitta watchlist med id:et
+        $watchlist = Watchlist::findOrFail($id);
+    
+        // Ta bort watchlist från databasen
+        $watchlist->delete();
+    
+        // Skicka tillbaka användaren till watchlist-sidan med en statusmeddelande
+        return redirect('watchlist')->with('status', 'The movie is deleted from he watchlist');    }
+    
 }
