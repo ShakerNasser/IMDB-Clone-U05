@@ -8,6 +8,30 @@ use Illuminate\Http\Request;
 class WatchlistController extends Controller
 {
    
+ public function add(Request $request, $movieId)
+{
+    $userId = auth()->id();
+    
+    $exists = Watchlist::where('user_id', $userId)->where('movie_id', $movieId)->exists();
+    if (!$exists) {
+        Watchlist::create([
+            'user_id' => $userId,
+            'movie_id' => $movieId,
+        ]);
+        return back()->with('success', 'Movie added to watchlist!');
+    }
+
+    return back()->with('error', 'Movie is already in your watchlist.');
+}
+
+
+public function showWatchlist()
+{
+    $watchlistItems = Watchlist::with('movie')->where('user_id', auth()->id())->get();
+    return view('watchlist.blade.php', ['watchlistItems' => $watchlistItems]);
+}
+
+
     /**
      * Display the specified resource.
      */
