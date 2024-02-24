@@ -12,7 +12,7 @@ class Watchlist extends Model
     protected $table = 'watchlists';
     protected $fillable = [
         'user_id',
-        'titles_id',
+        'movie_id',
     ];
 
      public function user()

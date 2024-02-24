@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\GenreController;
+use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\MovieController;
 use App\Models\Title;
 use App\Http\Controllers\ProfileController;
@@ -21,9 +22,7 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('homepage');
-});
+
 Route::get('/test', function () {
     return view('navbar-footer');
 });
@@ -44,11 +43,13 @@ Route::middleware('auth')->group(function () {
 
 
 /*mikael */
-
+Route::get('/', [HomepageController::class, 'index'])->name('homepage');
 Route::get('/review', [ReviewController::class, 'show']);
 Route::post('/review', [ReviewController::class, 'store']);
 
 Route::get('/movies', [MovieController::class, 'show']);
+Route::post('/watchlist/add/{movieId}', [WatchlistController::class, 'add'])->middleware('auth')->name('watchlist.add');
+
 
 
 

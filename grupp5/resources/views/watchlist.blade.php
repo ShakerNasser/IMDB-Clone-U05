@@ -17,6 +17,7 @@
             </tr>
         </thead>
         <tbody>
+            
             @foreach ($watchlists as $watchlist)
             @if ($watchlist->movie)
             <tr>
