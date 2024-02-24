@@ -23,7 +23,7 @@
   </div>
   <div class="p-3">
     <h1 class="text-2xl antialiased font-semibold leading-snug tracking-normal text-center  text-text">
-      Movie title
+     Movie Title
     </h1>
     <div class="">
         <div class="flex justify-evenly mt-2">
@@ -37,6 +37,7 @@
     </div>
   </div>
             </card> 
+
 </section>
 
 <!-- all movies -->

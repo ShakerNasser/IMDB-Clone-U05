@@ -1,9 +1,14 @@
 <?php
+
+use App\Http\Controllers\GenreController;
+use App\Http\Controllers\MovieController;
 use App\Models\Title;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ReviewController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TitleController;
 use App\Http\Controllers\WatchlistController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +28,7 @@ Route::get('/test', function () {
     return view('navbar-footer');
 });
 
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -38,15 +44,19 @@ Route::middleware('auth')->group(function () {
 
 
 /*mikael */
-Route::get('/movies', [TitleController::class, 'index']);
-Route::get('/movies/{movie}', [TitleController::class, 'show']);
-Route::apiResource('titles', TitleController::class);
 
+Route::get('/review', [ReviewController::class, 'show']);
+Route::post('/review', [ReviewController::class, 'store']);
+
+Route::get('/movies', [MovieController::class, 'show']);
 
 
 
 /*shaker */
 Route::get('/watchlist', [WatchlistController::class, 'show']);
+Route::get('/create-movie', [MovieController::class, 'index']);
+Route::post('/store-movie', [MovieController::class, 'store']);
+Route::delete('/watchlist/{id}', [WatchlistController::class, 'destroy'])->name('watchlist.destroy');
 
 
 
