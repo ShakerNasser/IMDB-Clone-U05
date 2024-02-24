@@ -23,27 +23,25 @@
           {{ $movie->title }}
         </h1>
         <div class="">
-            <div class="flex justify-evenly mt-2">
-@foreach ($movies as $movie)
-    <!-- Your movie card HTML -->
-    <form action="{{ route('watchlist.add', ['movieId' => $movie->id]) }}" method="POST">
-    @csrf
-    <button type="submit" class="btn py-2 px-4 rounded text-button-txt bg-button-background w-5/12">Watchlist</button>
-</form>
-
-@endforeach
-                <button class="btn py-2 px-4 rounded text-button-txt bg-button-background w-5/12">Trailer</button>
-            </div>
-            <div class="flex justify-evenly mt-2">
-                <button class="btn py-2 px-4 rounded text-button-txt bg-button-background w-5/12">Pictures</button>
-                <button class="btn py-2 px-4 rounded text-button-txt bg-button-background w-5/12">Episodes</button>
-            </div>
+          <div class="flex justify-evenly mt-2">
+            <!-- Watchlist Button Form -->
+            <form action="{{ route('watchlist.add', ['movieId' => $movie->id]) }}" method="POST" class="btn py-2 px-4 rounded text-button-txt bg-button-background w-100">
+              @csrf
+              <button type="submit" class="w-full">Watchlist</button>
+            </form>
+            <button class="btn py-2 px-4 rounded text-button-txt bg-button-background w-5/12">Trailer</button>
+          </div>
+          <div class="flex justify-evenly mt-2">
+            <button class="btn py-2 px-4 rounded text-button-txt bg-button-background w-5/12">Pictures</button>
+            <button class="btn py-2 px-4 rounded text-button-txt bg-button-background w-5/12">Episodes</button>
+          </div>
         </div>
       </div>
     </card>
     @endforeach
   </div>
 </section>
+
 
 
 <!-- all movies -->
