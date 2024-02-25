@@ -61,7 +61,7 @@ Route::post('/store-movie', [MovieController::class, 'store']);
 Route::delete('/watchlist/{id}', [WatchlistController::class, 'destroy'])->name('watchlist.destroy');
 
 
-Route::get('/trailers', [TrailerController::class, 'index'])->name('trailers.index');
+Route::get('/trailer', [TrailerController::class, 'index'])->name('trailers.index');
 
 
 
