@@ -73,10 +73,6 @@ Route::get('/trailer', [TrailerController::class, 'index'])->name('trailers.inde
 
 /*heval */
 
-Route::get('/genre', function () {
-    return view('/genre');
-});
-
 
 
 
