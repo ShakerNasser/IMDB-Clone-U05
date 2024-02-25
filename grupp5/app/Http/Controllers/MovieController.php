@@ -24,6 +24,14 @@ class MovieController extends Controller
         return redirect('create-movie')->with('status', 'Movie has been inserted');
 
     }
+
+    public function genre()
+{
+    $moviesByGenre = Movie::all()->groupBy('genre');
+
+    return view('genre', compact('moviesByGenre'));
+}
+
     /**
      * Display a listing of the resource.
      */
