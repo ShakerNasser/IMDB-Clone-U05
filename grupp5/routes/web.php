@@ -8,6 +8,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReviewController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TitleController;
+use App\Http\Controllers\TrailerController;
 use App\Http\Controllers\WatchlistController;
 use Illuminate\Support\Facades\Auth;
 
@@ -46,6 +47,8 @@ Route::middleware('auth')->group(function () {
 Route::get('/', [HomepageController::class, 'index'])->name('homepage');
 Route::get('/review', [ReviewController::class, 'show']);
 Route::get('/movies/{movie}/reviews', [ReviewController::class, 'index'])->name('movies.reviews.index');
+Route::post('/review', [ReviewController::class, 'store']);
+Route::get('/genre', [MovieController::class, 'genre'])->name('genre');
 Route::get('/movies', [MovieController::class, 'show']);
 Route::post('/watchlist/add/{movieId}', [WatchlistController::class, 'add'])->middleware('auth')->name('watchlist.add');
 Route::post('/movies/{movie_id}', [ReviewController::class, 'store'])->name('reviews.store');
@@ -55,8 +58,11 @@ Route::post('/movies/{movie_id}', [ReviewController::class, 'store'])->name('rev
 /*shaker */
 Route::get('/watchlist', [WatchlistController::class, 'show']);
 Route::get('/create-movie', [MovieController::class, 'index']);
-Route::post('/store-movie', [MovieController::class, 'store']);
+Route::post('/store-movie', [MovieController::class, 'store'])->name('store-movie');
 Route::delete('/watchlist/{id}', [WatchlistController::class, 'destroy'])->name('watchlist.destroy');
+
+
+Route::get('/trailer', [TrailerController::class, 'index'])->name('trailers.index');
 
 
 
@@ -66,9 +72,12 @@ Route::delete('/watchlist/{id}', [WatchlistController::class, 'destroy'])->name(
 
 
 /*heval */
+
 Route::get('/genre', function () {
     return view('/genre');
 });
+
+
 
 
 
