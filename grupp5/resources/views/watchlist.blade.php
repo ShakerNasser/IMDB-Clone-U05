@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 @include('meta')
-
+@include('navbar')
 
 <body class="bg-background">
     <section class="px-10 py-10">
@@ -43,9 +43,9 @@
     </div>
     @endif
 
-    <a href="{{ route('trailers.index') }}">Visa trailer</a>
 
 
+@include('footer')
 
 </body>
 
