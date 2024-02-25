@@ -10,6 +10,7 @@
 
         <div class="mx-auto max-w-screen-md mt-4">
             <form action="{{url('store-movie')}}" method="post" class="border border-gray-300 rounded-lg p-4">
+                
                 @csrf
                 <h4 class="text-text">Add movie by entering the following:</h4>
 

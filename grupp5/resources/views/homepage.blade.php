@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     @include('meta')
-@include('navbar-footer')
+@include('navbar')
 <body class="bg-background">
 <div class="">
     <img src="{{ asset('images/landing.jpg') }}" alt="landing page picture" class="w-full opacity-75">
@@ -77,5 +77,6 @@
             </card> 
 
 </section>
+@include('footer')
 </body>
 </html>

@@ -47,7 +47,7 @@ Route::middleware('auth')->group(function () {
 Route::get('/', [HomepageController::class, 'index'])->name('homepage');
 Route::get('/review', [ReviewController::class, 'show']);
 Route::post('/review', [ReviewController::class, 'store']);
-
+Route::get('/genre', [MovieController::class, 'genre'])->name('genre');
 Route::get('/movies', [MovieController::class, 'show']);
 Route::post('/watchlist/add/{movieId}', [WatchlistController::class, 'add'])->middleware('auth')->name('watchlist.add');
 
@@ -57,7 +57,7 @@ Route::post('/watchlist/add/{movieId}', [WatchlistController::class, 'add'])->mi
 /*shaker */
 Route::get('/watchlist', [WatchlistController::class, 'show']);
 Route::get('/create-movie', [MovieController::class, 'index']);
-Route::post('/store-movie', [MovieController::class, 'store']);
+Route::post('/store-movie', [MovieController::class, 'store'])->name('store-movie');
 Route::delete('/watchlist/{id}', [WatchlistController::class, 'destroy'])->name('watchlist.destroy');
 
 
@@ -71,7 +71,6 @@ Route::get('/trailers', [TrailerController::class, 'index'])->name('trailers.ind
 
 
 /*heval */
-Route::get('/genre', function () {return view('/genre');});
 
 
 
