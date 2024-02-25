@@ -18,18 +18,17 @@ class Movie extends Model
     ];
     use HasFactory;
 
-    public function reviews(){
+    public function reviews()
+    {
         return
-        $this->hasMany(Review::class);
+            $this->hasMany(Review::class);
     }
- public function users()
+    public function users()
     {
         return $this->belongsToMany(User::class);
     }
     public function watchlists()
-{
-    return $this->hasMany(Watchlist::class);
-}
-
-
+    {
+        return $this->hasMany(Watchlist::class);
+    }
 }

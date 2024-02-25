@@ -8,6 +8,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReviewController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TitleController;
+use App\Http\Controllers\TrailerController;
 use App\Http\Controllers\WatchlistController;
 use Illuminate\Support\Facades\Auth;
 
@@ -58,6 +59,9 @@ Route::get('/watchlist', [WatchlistController::class, 'show']);
 Route::get('/create-movie', [MovieController::class, 'index']);
 Route::post('/store-movie', [MovieController::class, 'store']);
 Route::delete('/watchlist/{id}', [WatchlistController::class, 'destroy'])->name('watchlist.destroy');
+
+
+Route::get('/trailers', [TrailerController::class, 'index'])->name('trailers.index');
 
 
 
