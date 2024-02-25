@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('reviews', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
             $table->integer('movie_id')->unsigned();
             $table->text('review');
             $table->boolean('approved')->default(0);

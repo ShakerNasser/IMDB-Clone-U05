@@ -22,12 +22,11 @@ class MovieController extends Controller
 
         $movie->save();
         return redirect('create-movie')->with('status', 'Movie has been inserted');
-
     }
     /**
      * Display a listing of the resource.
      */
-   
+
 
     /**
      * Show the form for creating a new resource.
@@ -37,7 +36,7 @@ class MovieController extends Controller
         //
     }
 
-//Function for search form 
+    //Function for search form 
     public function search(Request $request)
     {
         $request->validate([
@@ -53,10 +52,10 @@ class MovieController extends Controller
     /**
      * Display the specified resource.
      */
-     public function show()
+    public function show()
     {
-      $movies = Movie::get();
-      return view('movies', ['movies' => $movies]);
+        $movies = Movie::get();
+        return view('movies', ['movies' => $movies]);
     }
 
     /**

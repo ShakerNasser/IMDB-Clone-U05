@@ -45,11 +45,10 @@ Route::middleware('auth')->group(function () {
 /*mikael */
 Route::get('/', [HomepageController::class, 'index'])->name('homepage');
 Route::get('/review', [ReviewController::class, 'show']);
-Route::post('/review', [ReviewController::class, 'store']);
-
+Route::get('/movies/{movie}/reviews', [ReviewController::class, 'index'])->name('movies.reviews.index');
 Route::get('/movies', [MovieController::class, 'show']);
 Route::post('/watchlist/add/{movieId}', [WatchlistController::class, 'add'])->middleware('auth')->name('watchlist.add');
-
+Route::post('/movies/{movie_id}', [ReviewController::class, 'store'])->name('reviews.store');
 
 
 
@@ -67,8 +66,10 @@ Route::delete('/watchlist/{id}', [WatchlistController::class, 'destroy'])->name(
 
 
 /*heval */
-Route::get('/genre', function () {return view('/genre');});
+Route::get('/genre', function () {
+    return view('/genre');
+});
 
 
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
