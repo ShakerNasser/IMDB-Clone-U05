@@ -1,24 +1,31 @@
 <!DOCTYPE html>
+<html lang="en">
+
 @include('meta')
-@include('navbar')
+
 <body class="bg-background">
 
-    <div class="container mx-auto">
+    @include('navbar')
+
+    <div class="container mx-auto flex flex-col items-center justify-center min-h-screen">
         <h1 class="text-5xl font-bold mb-5 text-text"><span class="underline">Movie trailer</span></h1>
 
         @foreach ($movies as $movie)
-        <div class="flex flex-col items-center mb-10">
-            <h2 class="text-text">{{ $movie->title }}</h2>
-            <h2 class="text-text">{{ $movie->genre }}</h2>
-
-            <div>
-                {!! $movie->embedCode->html() !!}
+        <div class="mb-10 max-w-xl bg-card-background rounded-lg overflow-hidden shadow-lg">
+            <div class="px-6 py-4">
+                <div class="font-bold text-xl mb-2 text-text">{{ $movie->title }}</div>
+                <div class="text-text mb-2">{{ $movie->genre }}</div>
+                <div class="relative flex justify-center">
+                    <div style="padding: 0.5rem;">
+                        {!! $movie->embedCode->html() !!}
+                    </div>
+                </div>
             </div>
         </div>
         @endforeach
     </div>
-    @include('footer')
 
+    @include('footer')
 </body>
 
 </html>
