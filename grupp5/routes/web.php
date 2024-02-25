@@ -63,7 +63,7 @@ Route::delete('/watchlist/{id}', [WatchlistController::class, 'destroy'])->name(
 
 
 Route::get('/trailer', [TrailerController::class, 'index'])->name('trailers.index');
-
+Route::get('/search', [MovieController::class, 'search'])->name('search');
 
 
 /*alex */

@@ -11,7 +11,7 @@
                     </div>
                     <div class="hidden md:block">
                         <div class="flex items-baseline space-x-4">
-                            <form action="" method="GET">
+                            <form action="{{ route('search') }}" method="GET">
                                 <input type="text" placeholder="Search movie.." name="query" class="bg-search-field-color border-none rounded-l-lg w-80"><button type="submit" class="bg-search-btn-color p-2 text-text border-none rounded-r-lg">Search</button></input>
                             </form>
                         </div>

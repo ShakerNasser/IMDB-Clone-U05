@@ -48,13 +48,16 @@ class MovieController extends Controller
     public function search(Request $request)
     {
         $request->validate([
-            'title' => 'required'
-        ]);
+        'query' => 'required|min:3', // Minimum 3 characters
+    ]);
 
-        $title = $request->input('title');
-        $movies = Movie::where('title', 'LIKE', '%' . $title . '%')->get();
+    $query = $request->input('query');
+    $movies = Movie::where('title', 'LIKE', '%' . $query . '%')
+                   ->orWhere('description', 'LIKE', '%' . $query . '%')
+                   ->orWhere('genre', 'LIKE', '%' . $query . '%')
+                   ->paginate(10);
 
-        return view('search', compact('movies'));
+    return view('search', compact('movies'));
     }
 
     /**
