@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    @include('meta')
+@include('meta')
 @include('navbar')
+
 <body class="bg-background">
   <div class="">
     <img src="{{ asset('images/landing.jpg') }}" alt="landing page picture" class="w-full opacity-75">
@@ -51,7 +52,7 @@
   <section class="px-10 py-10">
     <h1 class="text-5xl font-bold mb-5 text-text"><span class="underline">All movies</span></h1>
   </section>
-  <section class="px-10">
+  <section class="px-10 mb-12">
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
       <card class="relative flex max-w-[16rem] min-h-[26rem] flex-col overflow-hidden rounded-xl bg-card-background bg-clip-border text-gray-700 shadow-md">
         <div class="min-h-[60%] relative m-0 overflow-hidden text-gray-700 bg-transparent rounded-none shadow-none bg-clip-border">
@@ -68,15 +69,17 @@
             </div>
             <div class="flex justify-evenly mt-2">
               <button class="btn py-2 px-4 rounded text-button-txt bg-button-background w-5/12">Pictures</button>
-              <button class="btn py-2 px-4 rounded text-button-txt bg-button-background w-5/12" type="button" onclick="window.location='{{ url('review') }}'">Reviews</button>
+              <div class="flex justify-evenly mt-2">
+                <a href="{{ route('movies.reviews.index', ['movie' => $movie->id]) }}" class="btn py-2 px-4 rounded text-button-txt bg-button-background w-5/12">Review</a>
+              </div>
             </div>
           </div>
         </div>
       </card>
 
 
-</section>
-@include('footer')
+  </section>
+  @include('footer')
 </body>
 
 </html>
