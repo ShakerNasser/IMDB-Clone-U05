@@ -8,8 +8,8 @@
         <h1 class="text-5xl font-bold mb-5 text-text"><span class="underline">Watchlist</span></h1>
     </section>
 
-    <div class="flex px-10 py-10">
-    <table class="table-auto bg-custom-color">
+    <div class="flex px-10 pt-4 pb-72">
+        <table class="table-auto bg-custom-color">
         <thead>
             <tr>
                 <th class="text-text text-lg px-4 py-2">Title</th>
@@ -35,16 +35,16 @@
             @endif
             @endforeach
         </tbody>
-    </table>
+        </table>
 
-    @if(session('status'))
-    <div>
+        @if(session('status'))
+        <div>
         <h1 class="text-2xl antialiased font-semibold leading-snug tracking-normal text-center  text-text">{{ session('status') }}</h1>
-    </div>
-    @endif
+     </div>
+     @endif
 
 
-
+     </div>
 @include('footer')
 
 </body>
