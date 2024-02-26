@@ -35,10 +35,10 @@
             </form>
         </div>
     </section>
-    @foreach ($reviews->reverse() as $review)
+    @foreach ($reviews->where('movie_id', $movie->id)->reverse() as $review)
     <card class="">
         <div class="">
-            <p>
+            <p class="text-text">
                 {{ $review->review}}
             </p>
     </card>
