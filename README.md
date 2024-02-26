@@ -40,3 +40,50 @@ https://miro.com/app/board/uXjVNwKLKhk=/?share_link_id=402589806992
 
 https://docs.google.com/document/d/14ecM2N3SZRsWMBUQGdKj2NvmlMwQkd3C1750UK35KK0/edit
 
+# Komma igång 
+
+Förutsättningar för att starta projektet. 
+
+Ett av följande operativsystem: macOS, Linux. På Windows rekommenderas WSL2.
+PHP (version 7)
+MySQL
+composer bör vara installerat
+git bör vara installerat
+Kom igång med projektet
+Klona projektet
+För att klona projektet, gå till terminalen och skriv:
+
+git clone https://github.com/chas-academy/u05-imdb-klon-u05-imdb-klon-grupp-5.git
+
+Kör kommandot composer install i roten av ditt projektkatalog för att installera alla nödvändiga nödvändigheter.
+
+(Valfritt)
+Kör npm install om du avser att utveckla appen.
+
+Konfiguration
+Du behöver skapa en .env-fil och konfigurera den innan du kör Laravel. Det finns en .env.example-fil du kan använda som mall för konfigurationen.
+Skriv in följande kommando för att göra en kopia av denna fil:
+
+cp .env.example .env
+Öppna .env-filen och ange dina databaskonfigurationer. Dessa variabler är prefixade med DB.
+
+Du behöver också generera en appnyckel, skriv in:
+
+php artisan key:generate
+Databas
+Vi måste göra en databasmigration innan appen kan hämta och spara data.
+
+För att göra en databasmigration:
+
+php artisan migrate
+För att tömma databasen innan migration:
+
+php artisan migrate:fresh
+Vi tillhandahåller också en seeder för att fylla databasen med data så att du inte behöver göra det själv. Lägg bara till en --seed-flagga i slutet av migrationskommandot, så här:
+
+php artisan migrate:fresh --seed
+Kör appen
+Vi kommer att använda Artisan-kommandot för att starta en lokal utvecklingsserver på http://127.0.0.1:8000:
+
+php artisan serve
+
