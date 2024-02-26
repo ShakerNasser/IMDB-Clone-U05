@@ -27,18 +27,21 @@
           <div class="">
             <div class="flex justify-evenly mt-2">
               <!-- Watchlist Button Form -->
+                          @if(Auth::user()->role == 0)
+
               <form action="{{ route('watchlist.add', ['movieId' => $movie->id]) }}" method="POST" class="btn py-2 px-4 rounded text-button-txt bg-button-background w-100">
                 @csrf
                 <button type="submit" class="w-full">Watchlist</button>
               </form>
+              @endif
               <div class="flex justify-evenly mt-2">
-                <a href="{{ route('trailers.index', ['movie_id' => $movie->id]) }}" class="btn py-2 px-4 rounded text-button-txt bg-button-background w-5/12">Trailer</a>
+                <a href="{{ route('trailers.index', ['movie_id' => $movie->id]) }}" class="btn py-2 px-4 rounded text-button-txt bg-button-background w-100">Trailer</a>
               </div>
             </div>
             <div class="flex justify-evenly mt-2">
               <button class="btn py-2 px-4 rounded text-button-txt bg-button-background w-5/12">Pictures</button>
               <div class="flex justify-evenly mt-2">
-                <a href="{{ route('movies.reviews.index', ['movie' => $movie->id]) }}" class="btn py-2 px-4 rounded text-button-txt bg-button-background w-5/12">Review</a>
+                <a href="{{ route('movies.reviews.index', ['movie' => $movie->id]) }}" class="btn py-2 px-4 rounded text-button-txt bg-button-background w-100">Review</a>
               </div>
             </div>
           </div>
