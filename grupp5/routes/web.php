@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\GenreController;
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\MovieController;
@@ -72,6 +73,11 @@ Route::get('/search', [MovieController::class, 'search'])->name('search');
 
 
 /*heval */
+
+Route::get('/usersettings', [AdminController::class, 'show'])->name('usersettings');
+Route::get('/usersettings/{id}/edit',[AdminController::class, 'edit'])->name('user.edit');
+Route::put('/usersettings/{id}', [AdminController::class, 'update'])->name('user.update');
+Route::delete('/usersettings/{id}', [AdminController::class, 'delete'])->name('user.delete');
 
 
 
