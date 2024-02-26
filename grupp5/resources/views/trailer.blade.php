@@ -10,7 +10,7 @@
     <div class="container mx-auto flex flex-col items-center justify-center min-h-screen">
         <h1 class="text-5xl font-bold mb-5 text-text"><span class="underline">Movie trailer</span></h1>
 
-        @foreach ($movies as $movie)
+
         <div class="mb-10 max-w-xl bg-card-background rounded-lg overflow-hidden shadow-lg">
             <div class="px-6 py-4">
                 <div class="font-bold text-xl mb-2 text-text">{{ $movie->title }}</div>
@@ -22,7 +22,7 @@
                 </div>
             </div>
         </div>
-        @endforeach
+
     </div>
 
     @include('footer')

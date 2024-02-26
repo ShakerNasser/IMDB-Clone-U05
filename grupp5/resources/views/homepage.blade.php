@@ -31,7 +31,9 @@
                 @csrf
                 <button type="submit" class="w-full">Watchlist</button>
               </form>
-              <button class="btn py-2 px-4 rounded text-button-txt bg-button-background w-5/12">Trailer</button>
+              <div class="flex justify-evenly mt-2">
+                <a href="{{ route('trailers.index', ['movie_id' => $movie->id]) }}" class="btn py-2 px-4 rounded text-button-txt bg-button-background w-5/12">Trailer</a>
+              </div>
             </div>
             <div class="flex justify-evenly mt-2">
               <button class="btn py-2 px-4 rounded text-button-txt bg-button-background w-5/12">Pictures</button>
@@ -65,7 +67,9 @@
           <div class="">
             <div class="flex justify-evenly mt-2">
               <button class="btn py-2 px-4 rounded text-button-txt bg-button-background w-5/12">Watchlist</button>
-              <button class="btn py-2 px-4 rounded text-button-txt bg-button-background w-5/12">Trailer</button>
+              <div class="flex justify-evenly mt-2">
+                <a href="{{ route('trailers.index', ['movie_id' => $movie->id]) }}" class="btn py-2 px-4 rounded text-button-txt bg-button-background w-5/12">Trailer</a>
+              </div>
             </div>
             <div class="flex justify-evenly mt-2">
               <button class="btn py-2 px-4 rounded text-button-txt bg-button-background w-5/12">Pictures</button>

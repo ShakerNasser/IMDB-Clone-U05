@@ -7,21 +7,21 @@ use App\Models\Movie;
 
 class TrailerController extends Controller
 {
-    public function index()
+    public function index($movie_id)
     {
         // Fetch all movies from the database
-        $movies = Movie::all();
+        $movie = Movie::findOrFail($movie_id);
 
         // Loop through each movie and fetch the embed code for the YouTube video
-        foreach ($movies as $movie) {
-            // Fetch the embed code for the YouTube video
-            $embedCode = OEmbed::get($movie->trailer_url);
 
-            // Store the embed code in the $movie object
-            $movie->embedCode = $embedCode;
-        }
+        // Fetch the embed code for the YouTube video
+        $embedCode = OEmbed::get($movie->trailer_url);
+
+        // Store the embed code in the $movie object
+        $movie->embedCode = $embedCode;
+
 
         // Pass the movies to the view
-        return view('trailer', compact('movies'));
+        return view('trailer', compact('movie_id', 'movie'));
     }
 }
