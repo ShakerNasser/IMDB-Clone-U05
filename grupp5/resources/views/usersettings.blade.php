@@ -43,7 +43,7 @@
                                 </form>
                             </td>
                             <td class="px-4 py-2">
-                                <a href="{{ route('user.edit', $user->id) }}" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Edit</a>
+                                <a href="{{ route('user.edit', $user->id) }}" class="bg-red-500 hover:bg-red-700 text-white font-bold py-3 px-7 rounded">Edit</a>
                             </td>
                         </tr>
                         @endforeach
@@ -70,7 +70,7 @@
             </div>
         </div>
     </div>
-
+    @include('footer')
 </body>
 
 </html>
