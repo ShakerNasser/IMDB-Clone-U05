@@ -21,8 +21,8 @@
           <img src="{{ $movie->image_url }}" alt="Movie Image" class="h-full object-cover" />
         </div>
         <div class="p-3">
-          <h1 class="text-2xl antialiased font-semibold leading-snug tracking-normal text-center text-text">
-            {{ $movie->title }}
+          <h1 class="text-2xl antialiased font-semibold leading-snug tracking-normal text-center text-text hover:bg-red-800">
+          <a  href="{{ route('movies.showMovie', ['id' => $movie->id]) }}">{{ $movie->title }}</a>
           </h1>
           <div class="">
             <div class="flex justify-evenly mt-2">

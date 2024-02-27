@@ -13,8 +13,9 @@
 
         <div class="mb-10 max-w-xl bg-card-background rounded-lg overflow-hidden shadow-lg">
             <div class="px-6 py-4">
-                <div class="font-bold text-xl mb-2 text-text">{{ $movie->title }}</div>
-                <div class="text-text mb-2">{{ $movie->genre }}</div>
+                <div class="font-bold text-xl mb-2 text-text"> Title: {{ $movie->title }}</div>
+                <div class="text-text mb-2">Genre: {{ $movie->genre }}</div>
+                <div class="text-text mb-2">Description: {{ $movie->description }}</div>
                 <div class="relative flex justify-center">
                     <div style="padding: 0.5rem;">
                         {!! $movie->embedCode->html() !!}
