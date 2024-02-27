@@ -5,8 +5,11 @@
                 <div class="flex items-center justify-between h-16">
                     <div class="flex items-center">
                         <div class="flex-shrink-0">
-                            <img src="{{ asset('images/Logo.png')}}" alt="logo" class="size-12 ml-1 inline cursor-pointer">
-                        </div>
+    <a href="{{ url('/') }}">
+        <img src="{{ asset('images/Logo.png')}}" alt="logo" class="size-12 ml-1 inline cursor-pointer">
+    </a>
+</div>
+
 
                     </div>
                     <div class="hidden md:block">
@@ -15,15 +18,24 @@
                                 <input type="text" placeholder="Search movie.." name="query" class="bg-search-field-color border-none rounded-l-lg w-80"><button type="submit" class="bg-search-btn-color p-2 text-text border-none rounded-r-lg">Search</button></input>
                             </form>
                         </div>
-                    </div>
+                    </div>      
                     <div class="hidden md:block">
                         <div class="ml-4 flex items-center md:ml-6">
 
                             <!-- Profile dropdown -->
                             @if (Route::has('login'))
-                            <div class="mr-4 ">
-                                @auth
-                                <a href="{{ url('/dashboard') }}" class="font-semibold text-text hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a>
+                                <div class="mr-4 ">
+                            @auth
+                                <a href="{{ url('/watchlist') }}" class="px-4 font-semibold text-text hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Watchlist</a>
+                                <a href="{{ url('/profile') }}" class="px-4 font-semibold text-text hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Settings</a>
+                            @if (Route::has('logout'))
+                                <form method="POST" action="{{ route('logout') }}" class="inline">
+                            @csrf
+                                <button type="submit" class="px-4 py-2 bg-signin-btn-color text-text rounded">Logout</button>
+                                </form>
+                            @endif
+
+
                                 @else
                                 <a href="{{ route('login') }}" class="font-semibold text-text hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
 
@@ -72,18 +84,27 @@
                 <div class="pt-4 pb-3 border-t border-gray-700">
                     <div class="mt-3 px-2 space-y-1">
                         @if (Route::has('login'))
-                        <div class="ml-12">
+                                <div class="mr-4 ">
                             @auth
-                            <a href="{{ url('/dashboard') }}" class="font-semibold text-text hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a>
-                            @else
-                            <a href="{{ route('login') }}" class="font-semibold text-text hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
-
-                            @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 font-semibold text-text hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
+                                <a href="{{ url('/watchlist') }}" class="font-semibold text-text hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Watchlist</a>
+                                <a href="{{ url('/profile') }}" class="font-semibold text-text hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Settings</a>
+                            @if (Route::has('logout'))
+                                <form method="POST" action="{{ route('logout') }}" class="inline">
+                            @csrf
+                                <button type="submit" class="px-4 py-2 bg-signin-btn-color text-text rounded">Logout</button>
+                                </form>
                             @endif
-                            @endauth
-                        </div>
-                        @endif
+
+
+                                @else
+                                <a href="{{ route('login') }}" class="font-semibold text-text hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
+
+                                @if (Route::has('register'))
+                                <a href="{{ route('register') }}" class="ml-4 font-semibold text-text hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
+                                @endif
+                                @endauth
+                            </div>
+                            @endif
                     </div>
                 </div>
             </div>
