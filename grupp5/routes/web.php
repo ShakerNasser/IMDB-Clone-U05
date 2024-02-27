@@ -50,7 +50,7 @@ Route::get('/review', [ReviewController::class, 'show']);
 Route::get('/movies/{movie}/reviews', [ReviewController::class, 'index'])->name('movies.reviews.index');
 Route::post('/review', [ReviewController::class, 'store']);
 Route::get('/genre', [MovieController::class, 'genre'])->name('genre');
-Route::get('/movies', [MovieController::class, 'show']);
+Route::get('/movies/{id}', [MovieController::class, 'showMovie'])->name('movies.showMovie');
 Route::post('/watchlist/add/{movieId}', [WatchlistController::class, 'add'])->middleware('auth')->name('watchlist.add');
 Route::post('/movies/{movie_id}', [ReviewController::class, 'store'])->name('reviews.store');
 
