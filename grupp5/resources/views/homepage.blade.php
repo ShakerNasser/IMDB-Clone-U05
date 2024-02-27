@@ -21,19 +21,19 @@
           <img src="{{ $movie->image_url }}" alt="Movie Image" class="h-full object-cover" />
         </div>
         <div class="p-3">
-          <h1 class="text-2xl antialiased font-semibold leading-snug tracking-normal text-center text-text hover:bg-red-800">
+          <h1 class="text-2xl antialiased font-semibold leading-snug tracking-normal text-center text-text">
           <a  href="{{ route('movies.showMovie', ['id' => $movie->id]) }}">{{ $movie->title }}</a>
           </h1>
           <div class="">
             <div class="flex justify-evenly mt-2">
               <!-- Watchlist Button Form -->
-                          @if(Auth::user()->role == 0)
-
+                          @if(auth()->check())
               <form action="{{ route('watchlist.add', ['movieId' => $movie->id]) }}" method="POST" class="btn py-2 px-4 rounded text-button-txt bg-button-background w-100">
-                @csrf
-                <button type="submit" class="w-full">Watchlist</button>
-              </form>
-              @endif
+                  @csrf
+                    <button type="submit" class="w-full">Watchlist</button>
+                 </form>
+                  @endif
+
               <div class="flex justify-evenly mt-2">
                 <a href="{{ route('trailers.index', ['movie_id' => $movie->id]) }}" class="btn py-2 px-4 rounded text-button-txt bg-button-background w-100">Trailer</a>
               </div>
