@@ -32,17 +32,8 @@ class ReviewController extends Controller
         $review->review = $request->review;
         $review->movie_id = $movie_id;
         $review->save();
-        return redirect()->route('movies.reviews.index', ['movie' => $movie_id])->with('status', 'Your review has been sent for review!!!');
+        return redirect()->route('movies.reviews.index', ['movie' => $movie_id])->with('status', 'Your review has been sent for review!');
     }
-    public function storeReview(Request $request)
-    {
-        $review = new Review();
-        $review->review = $request->review;
-
-        $review->save();
-        return redirect('review')->with('status', 'Your review has been sent for review!!!');
-    }
-
 
     public function delete($id)
     {
@@ -50,5 +41,17 @@ class ReviewController extends Controller
         $data->delete();
 
         return back();
+    }
+
+
+    public function approve($id)
+    {
+        $review = Review::find($id);
+        $review->approved = 1; // 1 för godkänd, 0 för inte godkänd
+        $review->update();
+
+        if (auth()->user()->role == 0) {
+            return back()->with('status', 'Recensionen har godkänts!');
+        } 
     }
 }

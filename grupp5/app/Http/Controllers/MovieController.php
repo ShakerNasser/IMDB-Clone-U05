@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Movie;
 use Illuminate\Http\Request;
+use App\Models\Review;
 
 class MovieController extends Controller
 {
@@ -96,7 +97,8 @@ class MovieController extends Controller
     public function showMovie($id)
     {
         $movie = Movie::findOrFail($id);
-        return view('movies', compact('movie'));
+        $reviews = $movie->reviews()->latest()->get();
+        return view('movies', compact('movie', 'reviews'));
     }
     
 

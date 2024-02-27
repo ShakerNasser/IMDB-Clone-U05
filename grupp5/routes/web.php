@@ -61,6 +61,8 @@ Route::get('/watchlist', [WatchlistController::class, 'show']);
 Route::get('/create-movie', [MovieController::class, 'index']);
 Route::post('/store-movie', [MovieController::class, 'store'])->name('store-movie');
 Route::delete('/watchlist/{id}', [WatchlistController::class, 'destroy'])->name('watchlist.destroy');
+Route::post('/review/{id}/approve', [ReviewController::class, 'approve'])->name('review.approve');
+Route::delete('/review/{id}/delete', [ReviewController::class, 'delete'])->name('review.delete');
 
 
 Route::get('/trailer/{movie_id}', [TrailerController::class, 'index'])->name('trailers.index');
