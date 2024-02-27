@@ -18,21 +18,21 @@
       @foreach ($movies as $movie)
       <card class="relative flex max-w-[16rem] min-h-[26rem] flex-col overflow-hidden rounded-xl bg-card-background bg-clip-border text-gray-700 shadow-md">
         <div class="min-h-[60%] relative m-0 overflow-hidden text-gray-700 bg-transparent rounded-none shadow-none bg-clip-border">
-          <img src="{{ $movie->image_url }}" alt="Movie Image" class="h-full object-cover" />
+          <img src="{{ asset('storage/' . $movie->image) }}" alt="Movie Image" class="h-full object-cover" />
         </div>
         <div class="p-3">
-          <h1 class="text-2xl antialiased font-semibold leading-snug tracking-normal text-center text-text">
-          <a  href="{{ route('movies.showMovie', ['id' => $movie->id]) }}">{{ $movie->title }}</a>
+          <h1 class="text-2xl antialiased font-semibold leading-snug tracking-normal text-center text-text hover:bg-red-800">
+            <a href="{{ route('movies.showMovie', ['id' => $movie->id]) }}">{{ $movie->title }}</a>
           </h1>
           <div class="">
             <div class="flex justify-evenly mt-2">
               <!-- Watchlist Button Form -->
-                          @if(auth()->check())
+              @if(auth()->check())
               <form action="{{ route('watchlist.add', ['movieId' => $movie->id]) }}" method="POST" class="btn py-2 px-4 rounded text-button-txt bg-button-background w-100">
-                  @csrf
-                    <button type="submit" class="w-full">Watchlist</button>
-                 </form>
-                  @endif
+                @csrf
+                <button type="submit" class="w-full">Watchlist</button>
+              </form>
+              @endif
 
               <div class="flex justify-evenly mt-2">
                 <a href="{{ route('trailers.index', ['movie_id' => $movie->id]) }}" class="btn py-2 px-4 rounded text-button-txt bg-button-background w-100">Trailer</a>

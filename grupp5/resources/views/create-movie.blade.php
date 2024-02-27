@@ -9,8 +9,8 @@
         <h1 class="text-5xl font-bold mb-5 text-text"><span class="underline">Movie settings</span></h1>
 
         <div class="mx-auto max-w-screen-md mt-4">
-            <form action="{{url('store-movie')}}" method="post" class="border border-gray-300 rounded-lg p-4">
-                
+            <form action="{{url('store-movie')}}" method="post" enctype="multipart/form-data" class="border border-gray-300 rounded-lg p-4">
+
                 @csrf
                 <h4 class="text-text">Add movie by entering the following:</h4>
 
@@ -32,8 +32,7 @@
 
                 <div>
                     <label for="trailer_url" class="block text-text mt-3">Trailer:</label>
-                    <textarea maxlength="100" name="trailer_url" id="trailer_url" rows="1" cols="50" required 
-                    placeholder="Enter movie trailers URL" class="form-input w-full bg-gray-100 border border-gray-300 rounded p-2"></textarea>
+                    <textarea maxlength="100" name="trailer_url" id="trailer_url" rows="1" cols="50" required placeholder="Enter movie trailers URL" class="form-input w-full bg-gray-100 border border-gray-300 rounded p-2"></textarea>
                 </div>
 
 
@@ -48,10 +47,10 @@
             </form>
         </div>
         @if(session('status'))
-    <div class="">
-        <h1 class="text-text">{{ session('status') }}</h1>
-    </div>
-@endif
+        <div class="">
+            <h1 class="text-text">{{ session('status') }}</h1>
+        </div>
+        @endif
     </section>
 
 

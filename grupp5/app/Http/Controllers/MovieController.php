@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Movie;
 use Illuminate\Http\Request;
 use App\Models\Review;
+use Illuminate\Support\Facades\Storage;
 
 class MovieController extends Controller
 {
@@ -19,18 +20,35 @@ class MovieController extends Controller
         $movie->description = $request->description;
         $movie->genre = $request->genre;
         $movie->trailer_url = $request->trailer_url;
-        $movie->image = $request->image;
 
-        $movie->save();
-        return redirect('create-movie')->with('status', 'Movie has been inserted');
+
+        // Sparar bilden och hämtar dess sökväg
+        $path = Storage::disk('public')->put('images', $request->file('image'));
+
+        // Kontrollera om bilden sparades korrekt innan du fortsätter
+        if ($path) {
+            // Spara bildens sökväg i databasen
+            $movie->image = $path;
+            $image = $request->file('image');
+
+            $path = $image->store('public/images');
+            // Sparar filmobjektet till databasen
+            $movie->save();
+
+            // Returnera en respons eller omdirigering beroende på ditt användningsfall
+            return redirect('create-movie')->with('status', 'Movie has been inserted');
+        } else {
+            // Om bilden inte kunde sparas, återgå med ett felmeddelande
+            return back()->with('error', 'Failed to save image');
+        }
     }
 
     public function genre()
-{
-    $moviesByGenre = Movie::all()->groupBy('genre');
+    {
+        $moviesByGenre = Movie::all()->groupBy('genre');
 
-    return view('genre', compact('moviesByGenre'));
-}
+        return view('genre', compact('moviesByGenre'));
+    }
 
     /**
      * Display a listing of the resource.
@@ -49,16 +67,16 @@ class MovieController extends Controller
     public function search(Request $request)
     {
         $request->validate([
-        'query' => 'required|min:3', // Minimum 3 characters
-    ]);
+            'query' => 'required|min:3', // Minimum 3 characters
+        ]);
 
-    $query = $request->input('query');
-    $movies = Movie::where('title', 'LIKE', '%' . $query . '%')
-                   ->orWhere('description', 'LIKE', '%' . $query . '%')
-                   ->orWhere('genre', 'LIKE', '%' . $query . '%')
-                   ->paginate(10);
+        $query = $request->input('query');
+        $movies = Movie::where('title', 'LIKE', '%' . $query . '%')
+            ->orWhere('description', 'LIKE', '%' . $query . '%')
+            ->orWhere('genre', 'LIKE', '%' . $query . '%')
+            ->paginate(10);
 
-    return view('search', compact('movies'));
+        return view('search', compact('movies'));
     }
 
     /**
@@ -100,6 +118,4 @@ class MovieController extends Controller
         $reviews = $movie->reviews()->latest()->get();
         return view('movies', compact('movie', 'reviews'));
     }
-    
-
 }
