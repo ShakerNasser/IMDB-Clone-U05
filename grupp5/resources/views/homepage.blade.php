@@ -6,7 +6,7 @@
 
 <body class="bg-background">
   <div class="">
-    <img src="{{ asset('images/landing.jpg') }}" alt="landing page picture" class="w-full opacity-75">
+    <img src="{{ asset('images/batmanLanding.jpg') }}" alt="landing page picture" class="w-full opacity-75">
   </div>
   <!-- Top Movies -->
   <section class="px-10 py-10">
