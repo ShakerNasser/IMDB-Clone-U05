@@ -1,8 +1,8 @@
-
+@include('meta')
+@include('navbar')
 <x-guest-layout>
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
-    @include('meta')
     <form method="POST" action="{{ route('login') }}">
         @csrf
         <section class="px-5 py-5">
@@ -42,9 +42,10 @@
                 </a>
             @endif
 
-            <button class="btn py-2 px-4 rounded text-button-txt bg-button-background w-1/12">
+            <button class="btn py-2 px-4 rounded text-button-txt bg-button-background w-6/12">
                 {{ __('Log in') }}
             </button>
         </div>
     </form>
 </x-guest-layout>
+@include('footer')

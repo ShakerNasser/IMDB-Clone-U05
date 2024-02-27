@@ -1,7 +1,8 @@
+@include('meta')
+@include('navbar')
 <x-guest-layout>
     <form method="POST" action="{{ route('register') }}">
         @csrf
-        @include('meta')
         <section class="px-5 py-5">
     <h1 class="text-4   xl font-bold mb-5 text-text"><span class="underline">Register</span></h1>
 </section>
@@ -47,9 +48,10 @@
                 {{ __('Already registered?') }}
             </a>
 
-            <button class="btn py-2 px-4 rounded text-button-txt bg-button-background w-1/12">
+            <button class="btn py-2 px-4 rounded text-button-txt bg-button-background w-6/12">
                 {{ __('Register') }}
             </button>
         </div>
     </form>
 </x-guest-layout>
+@include('footer')
