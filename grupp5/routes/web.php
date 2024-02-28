@@ -67,7 +67,9 @@ Route::delete('/review/{id}/delete', [ReviewController::class, 'delete'])->name(
 
 Route::get('/trailer/{movie_id}', [TrailerController::class, 'index'])->name('trailers.index');
 Route::get('/search', [MovieController::class, 'search'])->name('search');
-Route::get('/aboutus', function () {return view('aboutus');})->name('aboutus');
+Route::get('/aboutus', function () {
+    return view('aboutus');
+})->name('aboutus');
 
 /*alex */
 
@@ -77,7 +79,7 @@ Route::get('/aboutus', function () {return view('aboutus');})->name('aboutus');
 /*heval */
 
 Route::get('/usersettings', [AdminController::class, 'show'])->name('usersettings');
-Route::get('/usersettings/{id}/edit',[AdminController::class, 'edit'])->name('user.edit');
+Route::get('/usersettings/{id}/edit', [AdminController::class, 'edit'])->name('user.edit');
 Route::put('/usersettings/{id}', [AdminController::class, 'update'])->name('user.update');
 Route::delete('/usersettings/{id}', [AdminController::class, 'delete'])->name('user.delete');
 

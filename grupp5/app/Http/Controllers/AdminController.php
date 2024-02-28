@@ -8,14 +8,14 @@ use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
-    
+
     public function show()
     {
         if (Auth::check() && Auth::user()->role != 2) {
             $users = User::all()->sortBy('name');
             return view('usersettings', ['users' => $users]);
         } else
-         return back();
+            return back();
     }
 
     public function edit($id)
@@ -44,11 +44,11 @@ class AdminController extends Controller
         $data = User::find($id);
         $data->delete();
 
-        return redirect('usersettings')->with('status', 'The user has been deleted!') ;
+        return redirect('usersettings')->with('status', 'The user has been deleted!');
     }
 
 
-/*
+    /*
 
 OBBBBBSSSS!!!! DENNA LÄGGS IN INNAN PRESENTATION - ERSÄTTER RAD 14
 public function show()
@@ -60,8 +60,4 @@ public function show()
 }
 
 */
-
-
-
-    
 }

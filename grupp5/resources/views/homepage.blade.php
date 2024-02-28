@@ -12,7 +12,7 @@
 
 <body class="bg-background">
   <div class="">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTavC9C24n5OFv2jM84TUNPXF9NkwtWRnX7SjQasnpmjWIPD-Ip" alt="landing page picture" class="w-full opacity-75">
+    <img src="{{ asset('images/batmanLanding.jpg') }}" alt="landing page picture" class="w-full opacity-75">
   </div>
   <section class="px-10 py-10">
     <h1 class="text-5xl font-bold mb-5 text-text"><span class="underline">Featured movies</span></h1>
