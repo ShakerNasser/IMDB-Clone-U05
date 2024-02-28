@@ -67,7 +67,7 @@ Route::delete('/review/{id}/delete', [ReviewController::class, 'delete'])->name(
 
 Route::get('/trailer/{movie_id}', [TrailerController::class, 'index'])->name('trailers.index');
 Route::get('/search', [MovieController::class, 'search'])->name('search');
-
+Route::get('/aboutus', function () {return view('aboutus');})->name('aboutus');
 
 /*alex */
 
