@@ -4,6 +4,10 @@
 @include('meta')
 @include('navbar')
 
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
 <body class="bg-background">
   <div class="">
     <img src="{{ asset('images/batmanLanding.jpg') }}" alt="landing page picture" class="w-full opacity-75">
@@ -35,10 +39,10 @@
               <div class="flex justify-evenly mt-2">
                 <a href="{{ route('trailers.index', ['movie_id' => $movie->id]) }}" class="btn py-2 px-4 rounded w-full text-center text-button-txt bg-button-background w-100">Trailer</a>
               </div>
-       
-                 <div class="flex justify-evenly mt-2">
+
+              <div class="flex justify-evenly mt-2">
                 <a href="{{ route('movies.reviews.index', ['movie' => $movie->id]) }}" class="btn py-2 px-4 rounded w-full text-center text-button-txt bg-button-background w-100">Add Review</a>
-            </div>
+              </div>
             </div>
           </div>
         </div>
