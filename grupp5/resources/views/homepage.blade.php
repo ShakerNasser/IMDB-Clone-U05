@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 
-@include('meta')
-@include('navbar')
+<!-- @include('meta')
+@include('navbar') -->
 
 <head>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
