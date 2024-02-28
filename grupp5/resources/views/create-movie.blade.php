@@ -2,6 +2,7 @@
 <html lang="en">
 
 @include('meta')
+@include('navbar')
 
 <body class="bg-background flex justify-center items-center h-screen">
 

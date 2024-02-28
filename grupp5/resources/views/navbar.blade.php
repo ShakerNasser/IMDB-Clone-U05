@@ -27,8 +27,12 @@
                                 <div class="mr-4 ">
                             @auth
                                 <a href="{{ url('/watchlist') }}" class="px-4 font-semibold text-text hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Watchlist</a>
-                                <a href="{{ url('/profile') }}" class="px-4 font-semibold text-text hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Settings</a>
-                            @if (Route::has('logout'))
+                                <a href="{{ url('/usersettings') }}" class="px-4 font-semibold text-text hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Settings</a>
+                               @if(auth()->check() && auth()->user()->role == 0)
+                                <a href="{{ url('/create-movie') }}" class="px-4 font-semibold text-text hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Create Movie</a>
+@endif
+
+                                @if (Route::has('logout'))
                                 <form method="POST" action="{{ route('logout') }}" class="inline">
                             @csrf
                                 <button type="submit" class="px-4 py-2 bg-signin-btn-color text-text rounded">Logout</button>
@@ -37,7 +41,8 @@
 
 
                                 @else
-                                <a href="{{ route('login') }}" class="font-semibold text-text hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
+                                <a href="{{ route('aboutus') }}" class="px-4 ml-4 font-semibold text-text hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">About us</a>
+                                <a href="{{ route('login') }}" class="px-4 font-semibold text-text hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
 
                                 @if (Route::has('register'))
                                 <a href="{{ route('register') }}" class="ml-4 font-semibold text-text hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
@@ -88,7 +93,11 @@
                             @auth
                                 <a href="{{ url('/watchlist') }}" class="font-semibold text-text hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Watchlist</a>
                                 <a href="{{ url('/profile') }}" class="font-semibold text-text hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Settings</a>
-                            @if (Route::has('logout'))
+                                
+                                @if(auth()->check() && auth()->user()->role == 0)
+                                <a href="{{ url('/create-movie') }}" class="px-4 font-semibold text-text hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Create Movie</a>
+                            @endif
+                                @if (Route::has('logout'))
                                 <form method="POST" action="{{ route('logout') }}" class="inline">
                             @csrf
                                 <button type="submit" class="px-4 py-2 bg-signin-btn-color text-text rounded">Logout</button>
@@ -97,6 +106,7 @@
 
 
                                 @else
+                               <a href="{{ route('aboutus') }}" class="ml-4 font-semibold text-text hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">About us</a>
                                 <a href="{{ route('login') }}" class="font-semibold text-text hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
 
                                 @if (Route::has('register'))

@@ -6,7 +6,7 @@
 <body class="bg-background">
 
     <section class="px-10 py-12">
-        <h1 class="text-5xl font-bold mb-5 text-text"><span class="underline">User Settings</span></h1>
+        <h1 class="text-5xl font-bold mb-5 text-text"><span class="underline">Settings</span></h1>
     </section>
 
     <div class="py-12">
