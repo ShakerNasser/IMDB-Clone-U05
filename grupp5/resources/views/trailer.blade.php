@@ -26,7 +26,15 @@
 
     </div>
 
+    @if(session('status'))
+        <div class="">
+            <h1 class="text-text">{{ session('status') }}</h1>
+        </div>
+        @endif
+    </section>
+
     @include('footer')
+
 </body>
 
 </html>

@@ -18,7 +18,7 @@
       @foreach ($movies as $movie)
       <div class="flex flex-col items-center overflow-hidden rounded-xl bg-card-background bg-clip-border text-gray-700 shadow-md">
         <div class="min-h-[200px] relative overflow-hidden text-gray-700 bg-transparent rounded-none shadow-none bg-clip-border">
-          <img src="{{ $movie->image_url }}" alt="Movie Image" class="h-full object-cover w-full" />
+          <img src="{{ asset('storage/' . $movie->image) }}" alt="Movie Image" class="h-full object-cover w-full" />
         </div>
         <div class="p-3 flex flex-col justify-center items-center w-full">
           <h1 class="text-2xl antialiased font-semibold leading-snug tracking-normal text-center text-text mb-2">
