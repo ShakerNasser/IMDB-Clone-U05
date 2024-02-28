@@ -6,7 +6,7 @@
 
 <head>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <script src="{{ asset('use.typekit.net/zjb5wvv.js') }}"></script>
 </head>
 <!-- force deploy -->
 
