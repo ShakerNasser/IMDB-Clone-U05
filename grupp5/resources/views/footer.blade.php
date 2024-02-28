@@ -10,7 +10,6 @@
                 <div class="ml-20">
                     <h2 class="mb-6 text-sm font-semibold text-text uppercase dark:text-white">Group 5</h2>
                     <ul class="text-text font-medium">
-                        <li class="mb-2">Alex</li>
                         <li class="mb-2">Arian</li>
                         <li class="mb-2">Heval</li>
                         <li class="mb-2">Mikael</li>
