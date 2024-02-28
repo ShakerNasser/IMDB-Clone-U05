@@ -11,8 +11,8 @@
     </section>
 
     <div class="flex px-10 pt-4 pb-72 text-text">
-        <p> Genre:{{ $movie->genre }}</p>
-        <p> Description {{ $movie->description }}</p>
+        <p> <p class="font-bold">Genre:</p>{{ $movie->genre }}</p>
+       <p> <p class="font-bold">Description:</p> {{ $movie->description }}</p>
         <div>
             <a href="{{ route('trailers.index', ['movie_id' => $movie->id]) }}" class="btn py-2 px-4 rounded text-button-txt bg-button-background w-100 hover:bg-red-800">Go to trailer</a>
         </div>
