@@ -10,13 +10,17 @@
         <h1 class="text-5xl font-bold mb-5 text-text"><span class="underline">About: {{ $movie->title }}</span></h1>
     </section>
 
-    <div class="flex px-10 pt-4 pb-72 text-text">
-        <p> <p class="font-bold">Genre:</p>{{ $movie->genre }}</p>
-       <p> <p class="font-bold">Description:</p> {{ $movie->description }}</p>
-        <div>
+
+    <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 bg-gray-700">
+        <article class="prose lg:prose-lg xl:prose-xl text-text">
+            <p>Genre: {{ $movie->genre }}</p>
+            <p>Description:{{ $movie->description }}</p>
+        </article>
+        <div class="mt-100">
             <a href="{{ route('trailers.index', ['movie_id' => $movie->id]) }}" class="btn py-2 px-4 rounded text-button-txt bg-button-background w-100 hover:bg-red-800">Go to trailer</a>
         </div>
     </div>
+
 
     <div class="flex px-10 pt-4 pb-72 text-text">
         <div class="px-10 py-10">
