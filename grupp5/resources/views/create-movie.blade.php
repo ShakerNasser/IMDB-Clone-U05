@@ -4,7 +4,7 @@
 @include('meta')
 @include('navbar')
 
-<body class="bg-background flex justify-center items-center h-screen">
+<body class="bg-background h-screen">
 
     <section class="px-10 py-10">
         <h1 class="text-5xl font-bold mb-5 text-text"><span class="underline">Movie settings</span></h1>
