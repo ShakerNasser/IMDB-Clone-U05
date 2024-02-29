@@ -25,7 +25,7 @@
 
             <div>
                 <label for="description" class="block text-text mt-3">Description:</label>
-                <input maxlength="50" name="description" id="description" size="30" type="text" required placeholder="Description" class="form-input w-full bg-gray-100 border border-gray-300 rounded p-2" />
+                <textarea maxlength="250" name="description" id="description"  rows="3" cols="50" required placeholder="Description" class="form-input w-full bg-gray-100 border border-gray-300 rounded p-2"></textarea>
             </div>
 
             <div>
