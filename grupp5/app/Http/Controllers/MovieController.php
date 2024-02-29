@@ -21,14 +21,17 @@ class MovieController extends Controller
         $movie->genre = $request->genre;
         $movie->trailer_url = $request->trailer_url;
 
+
         // Sparar bilden och hämtar dess sökväg
-        $path = $request->file('image')->store('temp');
+        $path = Storage::disk('public')->put('images', $request->file('image'));
 
         // Kontrollera om bilden sparades korrekt innan du fortsätter
         if ($path) {
             // Spara bildens sökväg i databasen
             $movie->image = $path;
+            $image = $request->file('image');
 
+            $path = $image->store('public/images');
             // Sparar filmobjektet till databasen
             $movie->save();
 
