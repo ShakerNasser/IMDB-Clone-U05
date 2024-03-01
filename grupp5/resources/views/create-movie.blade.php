@@ -51,8 +51,8 @@
         </form>
     </div>
     @if(session('status'))
-    <div class="">
-        <h1 class="text-text">{{ session('status') }}</h1>
+    <div class="mt-4 text-center">
+        <h1 class="text-text" style="color: green;">{{ session('status') }}</h1>
     </div>
     @endif
 

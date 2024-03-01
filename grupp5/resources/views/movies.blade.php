@@ -13,7 +13,7 @@
         <h1 class="text-5xl font-bold mb-5 text-text"><span class="underline">About: {{ $movie->title }}</span></h1>
     </section>
 
-    <div class="flex flex-col md:flex-row justify-between px-10 pb-8 text-text">
+    <div class="flex flex-col justify-between px-10 pb-8 text-text">
         <div class="md:w-1/2">
             <div class="pb-4">
                 <p class="font-bold">Genre:</p>
@@ -24,7 +24,7 @@
                 <p>{{ $movie->description }}</p>
             </div>
         </div>
-        <div class="md:w-1/2 flex justify-end items-start">
+        <div class="md:w-1/2 flex items-start">
             <a href="{{ route('trailers.index', ['movie_id' => $movie->id]) }}" class="btn py-2 px-4 rounded text-button-txt bg-button-background hover:bg-red-800">Go to trailer</a>
         </div>
     </div>

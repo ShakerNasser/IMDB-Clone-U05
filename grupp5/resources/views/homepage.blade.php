@@ -23,7 +23,7 @@
       @foreach ($movies as $movie)
       <card class="relative flex max-w-[16rem] min-h-[28rem] flex-col overflow-hidden rounded-xl bg-card-background bg-clip-border text-gray-700 shadow-md">
         <div class="min-h-[55%] relative m-0 overflow-hidden text-gray-700 bg-transparent rounded-none shadow-none bg-clip-border">
-          <img src="{{ asset('images/thedark.png') }}" alt="Movie Image" class="h-full object-cover" />
+          <img src="{{ asset('storage/' . $movie->image) }}" alt="Movie Image" class="h-full object-cover" />
         </div>
         <div class="p-3">
           <h1 class="text-2xl antialiased font-semibold leading-snug tracking-normal text-center text-text hover:bg-red-800">

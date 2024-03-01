@@ -26,6 +26,7 @@
                             @if (Route::has('login'))
                                 <div class="mr-4 ">
                             @auth
+                            <a href="{{ route('aboutus') }}" class="px-4 ml-4 font-semibold text-text hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">About us</a>
                                 <a href="{{ url('/watchlist') }}" class="px-4 font-semibold text-text hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Watchlist</a>
                                 <a href="{{ url('/usersettings') }}" class="px-4 font-semibold text-text hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Settings</a>
                                @if(auth()->check() && auth()->user()->role == 0)
