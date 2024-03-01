@@ -3,27 +3,34 @@
 
 @include('meta')
 @include('navbar')
-<title>{{ $movie->title }}</title>
+
+<head>
+    <title>{{ $movie->title }}</title>
+</head>
 
 <body class="bg-background">
     <section class="px-10 py-10">
         <h1 class="text-5xl font-bold mb-5 text-text"><span class="underline">About: {{ $movie->title }}</span></h1>
     </section>
 
-
-    <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 bg-gray-700">
-        <article class="prose lg:prose-lg xl:prose-xl text-text">
-            <p>Genre: {{ $movie->genre }}</p>
-            <p>Description:{{ $movie->description }}</p>
-        </article>
-        <div class="mt-100">
-            <a href="{{ route('trailers.index', ['movie_id' => $movie->id]) }}" class="btn py-2 px-4 rounded text-button-txt bg-button-background w-100 hover:bg-red-800">Go to trailer</a>
+    <div class="flex flex-col md:flex-row justify-between px-10 pb-8 text-text">
+        <div class="md:w-1/2">
+            <div class="pb-4">
+                <p class="font-bold">Genre:</p>
+                <p>{{ $movie->genre }}</p>
+            </div>
+            <div class="pb-4">
+                <p class="font-bold">Description:</p>
+                <p>{{ $movie->description }}</p>
+            </div>
+        </div>
+        <div class="md:w-1/2 flex justify-end items-start">
+            <a href="{{ route('trailers.index', ['movie_id' => $movie->id]) }}" class="btn py-2 px-4 rounded text-button-txt bg-button-background hover:bg-red-800">Go to trailer</a>
         </div>
     </div>
 
-
-    <div class="flex px-10 pt-4 pb-72 text-text">
-        <div class="px-10 py-10">
+    <div class="flex px-10 pb-8 text-text">
+        <div class="w-full">
             <table class="table-auto">
                 <thead>
                     <tr>
@@ -44,14 +51,11 @@
                                 <button type="submit" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Approve</button>
                                 @endif
                             </form>
-                        </td>
-
-                        <td>
                             <form action="{{ route('review.delete', $review->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 @if (auth()->check() && auth()->user()->role == 0)
-                                <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Delete</button>
+                                <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-2 md:mt-0 md:ml-2">Delete</button>
                                 @endif
                             </form>
                         </td>
