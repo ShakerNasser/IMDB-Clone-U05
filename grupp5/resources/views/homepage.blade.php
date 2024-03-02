@@ -41,10 +41,11 @@
               <div class="flex justify-evenly mt-2">
                 <a href="{{ route('trailers.index', ['movie_id' => $movie->id]) }}" class="btn py-2 px-4 rounded w-full text-center text-button-txt bg-button-background w-100">Trailer</a>
               </div>
-
+              @if(auth()->check())
               <div class="flex justify-evenly mt-2">
                 <a href="{{ route('movies.reviews.index', ['movie' => $movie->id]) }}" class="btn py-2 px-4 rounded w-full text-center text-button-txt bg-button-background w-100">Add Review</a>
               </div>
+              @endif
             </div>
           </div>
         </div>
