@@ -23,7 +23,7 @@
                         @auth
                         <!-- Profile dropdown -->
                         <div class="px-4 font-semibold text-text hover:text-gray-900 dark:text-gray-400 dark:hover:text-red-500 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">
-                            Hi, {{ Auth::user()->name }} {{ __("logged in as ") }} {{ Auth::user()->role ?  __("user") : __("admin") }}
+                            Hi, {{ Auth::user()->name }}. {{ __("Logged in as ") }} {{ Auth::user()->role ?  __("user") : __("admin") }}
                         </div>
                         @endauth
                         @auth
