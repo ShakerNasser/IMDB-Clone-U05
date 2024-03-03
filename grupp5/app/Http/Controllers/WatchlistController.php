@@ -27,7 +27,13 @@ class WatchlistController extends Controller
 
 public function showWatchlist()
 {
-    $watchlistItems = Watchlist::with('movie')->where('user_id', auth()->id())->get();
+    // Hämta den inloggade användarens ID
+    $userId = auth()->id();
+
+    // Hämta watchlist-filmer för den inloggade användaren
+    $watchlistItems = Watchlist::with('movie')->where('user_id', $userId)->get();
+
+    // Skicka watchlist-filmer till vyn
     return view('watchlist.blade.php', ['watchlistItems' => $watchlistItems]);
 }
 
@@ -53,6 +59,7 @@ public function showWatchlist()
         $watchlist->delete();
     
         // Skicka tillbaka användaren till watchlist-sidan med en statusmeddelande
-        return redirect('watchlist')->with('status', 'The movie is deleted from he watchlist');    }
+        return redirect('watchlist')->with('status', 'The movie is deleted from he watchlist');    
+    }
     
 }

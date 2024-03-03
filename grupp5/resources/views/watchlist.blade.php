@@ -8,8 +8,8 @@
         <h1 class="text-5xl font-bold mb-5 text-text"><span class="underline">Watchlist</span></h1>
     </section>
 
-    <div class="flex px-10 pt-4 pb-72 justify-center"> 
-        <table class="table-auto bg-custom-color w-full"> 
+    <div class="flex px-10 pt-4 pb-72 justify-center">
+        <table class="table-auto bg-custom-color w-full">
             <thead>
                 <tr>
                     <th class="text-text text-lg px-4 py-2 text-center">Title</th>
@@ -21,14 +21,14 @@
             <tbody>
 
                 @foreach ($watchlists as $watchlist)
-                @if ($watchlist->movie)
-                <tr class="text-lg h-16"> 
+                @if ($watchlist->user_id == auth()->id())
+                <tr class="text-lg h-16">
                     <td class="text-text px-4 py-2 text-center hover:bg-red-700">{{ $watchlist->movie->title }}</td>
                     <td class="text-text px-4 py-2 text-center">{{ $watchlist->movie->genre }}</td>
-                   
+
                     <td class="px-4 py-2 text-center">
                         <div class="flex items-center justify-center">
-                            <img src="{{ asset('storage/' .$watchlist->movie->image) }}" width='100' height='100' class='img img-respnsive'/> 
+                            <img src="{{ asset('storage/' .$watchlist->movie->image) }}" width='100' height='100' class='img img-respnsive' />
                         </div>
                     </td>
                     <td class="px-4 py-2 text-center">
@@ -39,9 +39,9 @@
                         </form>
                     </td>
                 </tr>
-
                 @endif
                 @endforeach
+
             </tbody>
         </table>
 

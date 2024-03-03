@@ -18,6 +18,8 @@
       <p>MovieHub is a passionate community of film lovers who believe in the power of stories and how they can bring people together. We are convinced that movies are not just entertainment, but also a source of inspiration, reflection, and change.</p>
       <p>Our platform is not just a database of movies and actors; it's a community where people can share their thoughts, ideas, and feelings about movies. We believe in creating an inclusive and welcoming environment where everyone can feel at home, whether they are beginners or experienced film enthusiasts.</p>
       <p>We are proud to be a part of the global film community and look forward to continuing to grow and evolve together with our users. Thank you for being a part of MovieHub!</p>
+      <p> Our next update will include our new logo and more awsome features: </p>
+      <img src="{{ asset('images/moviehub.png') }}" alt="landing page picture" class="w-full opacity-75 rounded">
     </article>
 
   </div>

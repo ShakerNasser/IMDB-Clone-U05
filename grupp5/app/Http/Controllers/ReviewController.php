@@ -8,10 +8,9 @@ use Illuminate\Http\Request;
 
 class ReviewController extends Controller
 {
-
     public function index($movie_id)
     {
-        $reviews = Review::get();
+        $reviews = Review::where('movie_id', $movie_id)->with('user')->get();
         $movie = Movie::findOrFail($movie_id);
         return view('review', compact('movie_id', 'reviews', 'movie'));
     }
@@ -31,6 +30,7 @@ class ReviewController extends Controller
         $review = new Review();
         $review->review = $request->review;
         $review->movie_id = $movie_id;
+        $review->user_id = auth()->id(); // Set the user_id based on the authenticated user
         $review->save();
         return redirect()->route('movies.reviews.index', ['movie' => $movie_id])->with('status', 'Your review has been sent for review!');
     }
