@@ -25,6 +25,8 @@
                         <div class="px-4 font-semibold text-text hover:text-gray-900 dark:text-gray-400 dark:hover:text-red-500 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">
                             Hi, {{ Auth::user()->name }} {{ __("logged in as ") }} {{ Auth::user()->role ?  __("user") : __("admin") }}
                         </div>
+                        @endauth
+                        @auth
                         <a href="{{ route('aboutus') }}" class="px-4 ml-4 font-semibold text-text hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">About us</a>
                         <a href="{{ url('/watchlist') }}" class="px-4 font-semibold text-text hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Watchlist</a>
                         <a href="{{ url('/usersettings') }}" class="px-4 font-semibold text-text hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Settings</a>
@@ -87,6 +89,8 @@
                         <div class="px-4 font-semibold text-text hover:text-gray-900 dark:text-gray-400 dark:hover:text-red-500 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">
                             Hi, {{ Auth::user()->name }} {{ __("logged in as ") }} {{ Auth::user()->role ?  __("user") : __("admin") }}
                         </div>
+                        @endauth
+                        @auth
                         <a href="{{ url('/watchlist') }}" class="font-semibold text-text hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Watchlist</a>
                         <a href="{{ url('/profile') }}" class="font-semibold text-text hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Settings</a>
                         @if(auth()->check() && auth()->user()->role == 0)
