@@ -87,3 +87,33 @@ Vi kommer att använda Artisan-kommandot för att starta en lokal utvecklingsser
 
 php artisan serve
 
+## Views
+
+![Homepage](./grupp5/public/images/image.png)
+
+![Homepage](./grupp5/public/images/image-1.png)
+
+![Watchlist](./grupp5/public/images/image-2.png)
+
+![Review](./grupp5/public/images/image-3.png)
+
+![Trailer](./grupp5/public/images/image-4.png)
+
+![Create Movie](./grupp5/public/images/image-5.png)
+
+![Search](./grupp5/public/images/image-6.png)
+
+![User settings](./grupp5/public/images/image-7.png)
+
+![User settings](./grupp5/public/images/image-8.png)
+
+![Search by genre](./grupp5/public/images/image-9.png)
+
+![Genre](./grupp5/public/images/image-10.png)
+
+## Group 5
+
+* Arian
+* Heval
+* Mikael Lindeman
+* Shaker
