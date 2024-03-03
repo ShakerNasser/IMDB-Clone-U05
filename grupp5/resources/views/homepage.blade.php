@@ -14,6 +14,7 @@
   <div class="">
     <img src="{{ asset('images/batmanLanding.jpg') }}" alt="landing page picture" class="w-full opacity-75">
   </div>
+
   <section class="px-10 py-10">
     <h1 class="text-5xl font-bold mb-5 text-text"><span class="border-b-2 border-red-800">Featured movies</span></h1>
   </section>
@@ -48,11 +49,11 @@
               @endif
               @if(auth()->check() && auth()->user()->role == 0)
               <div class="flex justify-evenly mt-2">
-              <form action="{{ route('movie.destroy', $movie->id) }}" method="POST" class="flex justify-center">
-                @csrf
-                @method('DELETE')
-                <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Delete</button>
-              </form>
+                <form action="{{ route('movie.destroy', $movie->id) }}" method="POST" class="flex justify-center">
+                  @csrf
+                  @method('DELETE')
+                  <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Delete</button>
+                </form>
               </div>
               @endif
             </div>
