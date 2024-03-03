@@ -46,6 +46,15 @@
                 <a href="{{ route('movies.reviews.index', ['movie' => $movie->id]) }}" class="btn py-2 px-4 rounded w-full text-center text-button-txt bg-button-background w-100">Add Review</a>
               </div>
               @endif
+              @if(auth()->check() && auth()->user()->role == 0)
+              <div class="flex justify-evenly mt-2">
+              <form action="{{ route('movie.destroy', $movie->id) }}" method="POST" class="flex justify-center">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Delete</button>
+              </form>
+              </div>
+              @endif
             </div>
           </div>
         </div>
