@@ -30,43 +30,43 @@
     </div>
 
     <div class="flex px-10 pb-8 text-text">
-    <div class="w-full">
-        <table class="table-auto">
-            <thead>
-                <tr>
-                    <th class="px-4 py-2">Review</th>
-                    <th class="px-4 py-2">User</th> <!-- Add this line -->
-                    @if (auth()->check() && auth()->user()->role == 0)
-                    <th class="px-4 py-2">Actions</th>
-                    @endif
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($reviews->where('movie_id', $movie->id)->reverse() as $review)
-                <tr>
-                    <td class="px-4 py-2">{{ $review->review }}</td>
-                    <td class="px-4 py-2">{{ $review->user->id }} - {{ $review->user->name }}</td> <!-- Add this line -->
-                    <td class="px-4 py-2">
-                        <form action="{{ route('review.approve', $review->id) }}" method="POST">
-                            @csrf
-                            @if (auth()->check() && auth()->user()->role == 0)
-                            <button type="submit" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Approve</button>
-                            @endif
-                        </form>
-                        <form action="{{ route('review.delete', $review->id) }}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            @if (auth()->check() && auth()->user()->role == 0)
-                            <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-2 md:mt-0 md:ml-2">Delete</button>
-                            @endif
-                        </form>
-                    </td>
-                </tr>
-                @endforeach
-            </tbody>
-        </table>
+        <div class="w-full">
+            <table class="table-auto">
+                <thead>
+                    <tr>
+                        <th class="px-4 py-2">Review</th>
+                        <th class="px-4 py-2">User</th> <!-- Add this line -->
+                        @if (auth()->check() && auth()->user()->role == 0)
+                        <th class="px-4 py-2">Actions</th>
+                        @endif
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($reviews->where('movie_id', $movie->id)->reverse() as $review)
+                    <tr>
+                        <td class="px-4 py-2">{{ $review->review }}</td>
+                        <td class="px-4 py-2">Userid: {{ $review->user->id }} - Username: {{ $review->user->name }}</td> <!-- Add this line -->
+                        <td class="px-4 py-2">
+                            <form action="{{ route('review.approve', $review->id) }}" method="POST">
+                                @csrf
+                                @if (auth()->check() && auth()->user()->role == 0)
+                                <button type="submit" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Approve</button>
+                                @endif
+                            </form>
+                            <form action="{{ route('review.delete', $review->id) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                @if (auth()->check() && auth()->user()->role == 0)
+                                <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-2 md:mt-0 md:ml-2">Delete</button>
+                                @endif
+                            </form>
+                        </td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
     </div>
-</div>
 
 
 </body>

@@ -27,6 +27,7 @@
                         </div>
                         @endauth
                         @auth
+                        <a href="{{ route('genre') }}" class="px-4 font-semibold text-text hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Genre</a>
                         <a href="{{ route('aboutus') }}" class="px-4 ml-4 font-semibold text-text hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">About us</a>
                         <a href="{{ url('/watchlist') }}" class="px-4 font-semibold text-text hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Watchlist</a>
                         <a href="{{ url('/usersettings') }}" class="px-4 font-semibold text-text hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Settings</a>
@@ -38,6 +39,7 @@
                             <button type="submit" class="px-4 py-2 bg-signin-btn-color text-text rounded">Logout</button>
                         </form>
                         @else
+                        <a href="{{ route('genre') }}" class="px-4 font-semibold text-text hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Genre</a>
                         <a href="{{ route('aboutus') }}" class="px-4 ml-4 font-semibold text-text hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">About us</a>
                         <a href="{{ route('login') }}" class="px-4 font-semibold text-text hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
                         @if (Route::has('register'))
@@ -91,6 +93,7 @@
                         </div>
                         @endauth
                         @auth
+                        <a href="{{ route('genre') }}" class="px-4 font-semibold text-text hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Genre</a>
                         <a href="{{ url('/watchlist') }}" class="font-semibold text-text hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Watchlist</a>
                         <a href="{{ url('/profile') }}" class="font-semibold text-text hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Settings</a>
                         @if(auth()->check() && auth()->user()->role == 0)
@@ -105,6 +108,7 @@
 
 
                         @else
+                        <a href="{{ route('genre') }}" class="px-4 font-semibold text-text hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Genre</a>
                         <a href="{{ route('aboutus') }}" class="ml-4 font-semibold text-text hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">About us</a>
                         <a href="{{ route('login') }}" class="font-semibold text-text hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
 
